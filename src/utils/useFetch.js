@@ -11,12 +11,12 @@ function useFetch(url) {
     const fetchData = async () => {
       setloading("loading...");
       setdata(null);
-      
+  
     
      await fetchDataApi(url).then((res)=>{
-   
-      setloading(false);
+  
        setdata(res);
+      setloading(false);
      }).catch((res)=>{
       setloading(null);
         setError("Something went wrong!");

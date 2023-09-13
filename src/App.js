@@ -6,30 +6,30 @@ import Home from "./Home/Home";
 import Search from "./searchresult/Search";
 import { fetchDataApi } from "./utils/apidata";
 import { useEffect } from "react";
+import { frtchApicongid } from "./storevaule/homeSlice";
 
-function App() {
+function  App () {
   const dispatch=useDispatch()
   const { hashIN } = useSelector((state) => state.home.url);
 
   useEffect(() => {
-    frtchApicongid()
+       getULl()
   }, [])
 
 
-   const frtchApicongid =()=>{
-      fetchDataApi("/configuration").then(res=>{
-
-         const URL = {
-           backdrop: res.images.secure_base_url + "original",
-           poster: res.images.secure_base_url + "original",
-           profile: res.images.secure_base_url + "original",
-         };
-         dispatch(frtchApicongid(res));
-      })
-
-
+ const getULl = async () => {
+   try {
+     const res = await fetchDataApi("/configuration");
+     const url = {
+       backdrop: res.images.secure_base_url + "original",
+       poster: res.images.secure_base_url + "original",
+       profile: res.images.secure_base_url + "original",
+     };
+     dispatch(frtchApicongid(url))
+   } catch (err) {
+     console.error(err);
    }
-    
+ };
 
 
   return <div className="App">

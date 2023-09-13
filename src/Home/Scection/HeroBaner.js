@@ -2,17 +2,24 @@ import React, { useEffect, useState } from "react";
 import "./HeroBaner.css";
 import { useNavigate } from "react-router-dom";
 import useFetch from "../../utils/useFetch";
-
-export default function HeroBaner() {
+import { useSelector } from "react-redux";
+import Img from "../../Components/Lazyloadmage/Img";
+import Content from "../../Components/ContentWraper/Content";
+import './HeroBaner.css'
+export default  function HeroBaner() {
   const [input, setinput] = useState("");
   const [background, setbackground] = useState("");
-
-  const Navigate = useNavigate();
+  console.log("🚀 ~ file: HeroBaner.js:12 ~ HeroBaner ~ background:", background)
+  const {url} = useSelector((state) => state.home);
   const { data, loading } = useFetch("/movie/upcoming");
+  console.log("🚀 ~ file: HeroBaner.js:15 ~ HeroBaner ~ data:", data)
+  const Navigate = useNavigate();
 
   useEffect(() => {
-    const bg = data?.results?.[Math.floor(Math.random() * 20)]?.backdrop_path
-     setbackground(bg)
+    const bg =
+      url.backdrop +
+      data?.results?.[Math.floor(Math.random() * 20)]?.backdrop_path;
+    setbackground(bg);
   }, [data]);
 
   const Queryinput = (e) => {
@@ -23,22 +30,32 @@ export default function HeroBaner() {
 
   return (
     <div className="HeroBaner">
-      <div className="HeroBaner_main">
-        <div className="HeroBaner_content">
-          <span className="title">Watch Movies</span>
-          <span className="subtitle">fghghghhhhgfhh</span>
+      {!loading && (
+        <div className="backDrop_img">
+          <Img src={background} className="background_img" />
+        </div>
+      )}
+      <div className="optcylatyer"></div>
+      <Content>
+        <div className="HeroBaner_main">
+          <div className="HeroBaner_content">
+            <span className="title">Watch Movies</span>
+            <span className="subtitle">
+              we have a container with a box inside it. The box is given
+            </span>
 
-          <div className="HeroBaner_search">
-            <input
-              type="text"
-              placeholder="Search Movise"
-              onChange={(e) => setinput(e.target.value)}
-              onKeyUp={Queryinput}
-            />
-            <button>Search</button>
+            <div className="HeroBaner_search">
+              <input
+                type="text"
+                placeholder="Search Movise"
+                onChange={(e) => setinput(e.target.value)}
+                onKeyUp={Queryinput}
+              />
+              <button>Search</button>
+            </div>
           </div>
         </div>
-      </div>
+      </Content>
     </div>
   );
 }

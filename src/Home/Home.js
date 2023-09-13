@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
      <HeroBaner/>
-
+      <p>home</p>
 
     </div>
   )

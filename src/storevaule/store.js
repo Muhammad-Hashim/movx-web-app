@@ -7,7 +7,7 @@ import homeSlice from  './homeSlice'
   reducer: {
     home: homeSlice,
   },
-  applyMiddleware(createThunkMiddleware())
+
 });
 
 

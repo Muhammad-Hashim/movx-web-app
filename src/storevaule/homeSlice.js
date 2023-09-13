@@ -1,6 +1,16 @@
 
 "use client";
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+
+// const frtchApicongid = createAsyncThunk(
+//   "users/fetchByIdStatus",
+//   async (userId, thunkAPI) => {
+//     const response = await  
+//     return response.data;
+//   }
+// );
+
+
 
 export const homeSlice = createSlice({
   name: "Hsome",
@@ -16,10 +26,18 @@ export const homeSlice = createSlice({
       state.genres = action.payload;
     },
   },
+
+  // extraReducers: (builder) => {
+  //   // Add reducers for additional action types here, and handle loading state as needed
+  //   builder.addCase(frtchApicongid.fulfilled, (state, action) => {
+  //     // Add user to the state array
+  //     state.url = action.payload;
+  //   });
+  // },
 });
 
 // Action creators are generated for each case reducer function
-export const { getApiConfiguration, getGenres } = homeSlice.actions;
+export const { frtchApicongid, getGenres } = homeSlice.actions;
 
 export default homeSlice.reducer;
  
