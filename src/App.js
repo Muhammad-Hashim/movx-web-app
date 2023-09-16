@@ -7,6 +7,8 @@ import Search from "./searchresult/Search";
 import { fetchDataApi } from "./utils/apidata";
 import { useEffect } from "react";
 import { frtchApicongid } from "./storevaule/homeSlice";
+import Header from "./Home/Scection/Header";
+import Footer from "./Components/Footer/Footer";
 
 function  App () {
   const dispatch=useDispatch()
@@ -32,19 +34,18 @@ function  App () {
  };
 
 
-  return <div className="App">
-    
-    <BrowserRouter>
-      <Routes>
-           <Route path="/" element={<Home/>}/>
-           <Route path="/search/:query" element={<Search/>}/>
-
-      </Routes>
-    </BrowserRouter>
-
-
-
-  </div>;
+  return (
+    <div className="App">
+      <Header/>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/search/:query" element={<Search />} />
+          </Routes>
+        </BrowserRouter>
+      <Footer/>
+    </div>
+  );
 }
 
 export default App;

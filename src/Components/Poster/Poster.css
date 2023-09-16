@@ -1,0 +1,85 @@
+.carouselItem {
+    margin-bottom: 50px;
+}
+
+.carouselItems {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    overflow: hidden;
+
+    gap: 15px;
+}
+
+.posterBlock {}
+
+.posterBlock img {
+
+    object-fit: contain;
+    width: 216px;
+    height: 324px;
+    border-radius: 15px;
+}
+
+.textBlock {
+
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    width: 100%;
+    height: 20px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 24px;
+}
+
+.date {
+    width: 75%;
+    height: 20px;
+    font-size: 14px;
+    opacity: 0.5;
+}
+
+.loadingSkeleton {
+    display: flex;
+    gap: 10px;
+    overflow-y: hidden;
+    margin-right: -20px;
+    margin-left: -20px;
+    padding: 0 20px;
+}
+
+.skeletonItem {
+    width: 125px;
+}
+
+
+.posterBlockSkeleton {
+    border-radius: 12px;
+    width: 100%;
+
+    margin-bottom: 30px;
+
+}
+
+.textBlockSkeleton {
+    display: flex;
+    flex-direction: column;
+}
+
+.titleSkeleton {
+    width: 100%;
+    height: 20px;
+    margin-bottom: 10px;
+}
+
+.dateSkeleton {
+    width: 75%;
+    height: 20px;
+}

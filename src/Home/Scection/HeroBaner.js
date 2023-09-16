@@ -9,10 +9,10 @@ import './HeroBaner.css'
 export default  function HeroBaner() {
   const [input, setinput] = useState("");
   const [background, setbackground] = useState("");
-  console.log("🚀 ~ file: HeroBaner.js:12 ~ HeroBaner ~ background:", background)
+
   const {url} = useSelector((state) => state.home);
   const { data, loading } = useFetch("/movie/upcoming");
-  console.log("🚀 ~ file: HeroBaner.js:15 ~ HeroBaner ~ data:", data)
+
   const Navigate = useNavigate();
 
   useEffect(() => {

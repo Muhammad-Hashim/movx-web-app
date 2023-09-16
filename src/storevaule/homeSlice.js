@@ -13,9 +13,9 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 
 export const homeSlice = createSlice({
-  name: "Hsome",
+  name: "Home",
   initialState: {
-    url: { hashIN: "8582853582" },
+    url: {  },
     genres: {},
   },
   reducers: {
