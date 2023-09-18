@@ -39,7 +39,7 @@ export default  function HeroBaner() {
       <Content>
         <div className="HeroBaner_main">
           <div className="HeroBaner_content">
-            <span className="title">Watch Movies</span>
+            <span className="titlekk">Watch Movies</span>
             <span className="subtitle">
               we have a container with a box inside it. The box is given
             </span>

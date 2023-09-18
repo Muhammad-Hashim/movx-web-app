@@ -8,13 +8,7 @@ export default function Home() {
     <div>
       <HeroBaner />
       <Trending />
-      <Trending />
-      <Trending />
-      <Trending />
-      <Trending />
-      <Trending />
-       <Trending/>
-       
+     
     </div>
   );
 }
