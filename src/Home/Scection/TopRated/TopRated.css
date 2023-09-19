@@ -1,0 +1,18 @@
+.Trending_Header{
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 70px;
+    justify-content: space-between;
+    margin-bottom: 20px; 
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px;
+
+}
+ .Trending_Header span{
+    font-size: 24px;
+    color: white;
+    font-weight: normal;
+ }

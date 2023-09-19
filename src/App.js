@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { frtchApicongid } from "./storevaule/homeSlice";
 import Header from "./Home/Scection/Header";
 import Footer from "./Components/Footer/Footer";
+import Details from "./Details/Details";
 
 function  App () {
   const dispatch=useDispatch()
@@ -16,6 +17,7 @@ function  App () {
 
   useEffect(() => {
        getULl()
+       getGenres()
   }, [])
 
 
@@ -34,16 +36,31 @@ function  App () {
  };
 
 
+    const getGenres= async ()=>{
+      let genre=[];
+     let endpoints=["tv","movie"]
+     let promies=[]
+     endpoints.forEach((endpoint)=>{
+       promies.push(fetchDataApi(`/genre/${endpoint}/list`));
+     
+     })
+     const data= await Promise.all(promies)
+     console.log("🚀 ~ file: App.js:47 ~ getGenres ~ data:", data)
+   
+    } 
+
+
   return (
     <div className="App">
-      <Header/>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/search/:query" element={<Search />} />
-          </Routes>
-        </BrowserRouter>
-      <Footer/>
+      <Header />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/search/:query" element={<Search />} />
+          <Route path="/details" element={<Details />} />
+        </Routes>
+      </BrowserRouter>
+      <Footer />
     </div>
   );
 }
