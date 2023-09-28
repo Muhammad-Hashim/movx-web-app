@@ -1,15 +1,20 @@
 
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
- import { useSelector , useDispatch } from "react-redux";
+import { useSelector , useDispatch } from "react-redux";
 import Home from "./Home/Home";
 import Search from "./searchresult/Search";
 import { fetchDataApi } from "./utils/apidata";
 import { useEffect } from "react";
-import { frtchApicongid } from "./storevaule/homeSlice";
+import { frtchApicongid, getGenres } from "./storevaule/homeSlice";
 import Header from "./Home/Scection/Header";
 import Footer from "./Components/Footer/Footer";
 import Details from "./Details/Details";
+
+
+  export 
+
+
 
 function  App () {
   const dispatch=useDispatch()
@@ -17,9 +22,9 @@ function  App () {
 
   useEffect(() => {
        getULl()
-       getGenres()
+       
   }, [])
-
+      
 
  const getULl = async () => {
    try {
@@ -36,18 +41,7 @@ function  App () {
  };
 
 
-    const getGenres= async ()=>{
-      let genre=[];
-     let endpoints=["tv","movie"]
-     let promies=[]
-     endpoints.forEach((endpoint)=>{
-       promies.push(fetchDataApi(`/genre/${endpoint}/list`));
-     
-     })
-     const data= await Promise.all(promies)
-     console.log("🚀 ~ file: App.js:47 ~ getGenres ~ data:", data)
-   
-    } 
+  
 
 
   return (
@@ -56,6 +50,7 @@ function  App () {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/Details/:id/:media_type" element={<Details />} />
           <Route path="/search/:query" element={<Search />} />
           <Route path="/details" element={<Details />} />
         </Routes>
@@ -66,3 +61,5 @@ function  App () {
 }
 
 export default App;
+
+

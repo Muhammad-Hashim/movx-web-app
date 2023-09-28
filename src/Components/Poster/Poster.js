@@ -6,10 +6,13 @@ import {
 } from "react-icons/bs";
 import { useSelector } from "react-redux";
 import dayjs from "dayjs";
+import Details from "../../Details/Details";
+import { useNavigate } from "react-router-dom";
+
 
 export default function Poster({data,loading}) {
   const { url } = useSelector((state) => state.home);
-          
+           const navigate = useNavigate();
    const skItem = () => {
      return (
        <div className="skeletonItem">
@@ -24,7 +27,9 @@ export default function Poster({data,loading}) {
      );
    };
 
-  const navigation = () => {};
+  const details = (id, media_type) => {
+    navigate(`/Details/${id}/${media_type}`);
+  }
   return (
     <div className="carousel">
       {/* <div className="carousel_arrow_">
@@ -46,13 +51,16 @@ export default function Poster({data,loading}) {
               : "";
 
             return (
-              <div key={items.id} className="carouselItem">
+              <div
+                key={items.id}
+                className="carouselItem"
+                onClick={ () =>details(items.id, items.media_type)}
+              >
                 <div className="posterBlock">
                   <img src={posturl} alt={items.name || items.title} />
                 </div>
                 <div className="textBlock">
-                  <span className="title">
-                    {items.title}</span>
+                  <span className="title">{items.title}</span>
                   <span className="date">
                     {dayjs(items.release_date).format("MMM D, YYYY")}
                   </span>
