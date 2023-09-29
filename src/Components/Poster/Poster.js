@@ -54,7 +54,7 @@ export default function Poster({data,loading}) {
               <div
                 key={items.id}
                 className="carouselItem"
-                onClick={ () =>details(items.id, items.media_type)}
+                onClick={ () =>details(items.id, items.media_type  )}
               >
                 <div className="posterBlock">
                   <img src={posturl} alt={items.name || items.title} />
