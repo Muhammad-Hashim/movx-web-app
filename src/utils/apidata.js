@@ -16,8 +16,7 @@ const options = {
   params: params,
   headers: {
     accept: "application/json",
-    Authorization:
-      `Bearer ${process.env.API_KEY}`,
+    Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNjQyOTg0MWYwZGUzZmZjZTQ2NGM4YmJjMjNkNzdlMiIsInN1YiI6IjYyZTdiOTJiZjFiNTcxMDA1OTU2ZDM2NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.nvcOod1C9Dhrpih5KUmdcRS0NEXfF8LnWXDnmug42Xo`,
   },
 };
   
