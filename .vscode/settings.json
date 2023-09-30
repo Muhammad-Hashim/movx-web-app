@@ -1,7 +1,8 @@
 {
-    "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${profileName}${separator}${appName}${separator}[Branch: master]",
+    "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${profileName}${separator}${appName}${separator}[Branch: developer]",
     "editor.acceptSuggestionOnEnter": "on",
     "conventionalCommits.scopes": [
-        "API_KEY"
+        "API_KEY",
+        "Branch"
     ]
 }
